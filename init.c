@@ -6,7 +6,7 @@
 /*   By: mtoia <mtoia@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:59:02 by mtoia             #+#    #+#             */
-/*   Updated: 2022/05/23 14:58:45 by mtoia            ###   ########.fr       */
+/*   Updated: 2022/05/23 18:37:29 by mtoia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,19 @@ int	main()
 	
 	y = 0;
 	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, 640, 320, "Fract-ol");
-	img.img = mlx_new_image(vars.mlx, 640, 320);
+	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Fract-ol");
+	img.img = mlx_new_image(vars.mlx, 1920, 1080);
 	img.addr = mlx_get_data_addr(img.img, &img.bit_per_pixel, &img.line_length, &img.endian);
 	my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
-	while (y < 319)
+	while (y < 1000)
 	{
-		my_mlx_pixel_put(&img, 5, y, 16711680);
+		////my_mlx_pixel_put(&img, 5, y, 16711680);
 		y++;
 		int x;
 		x = 0;
-		while (x < 640)
+		while (x < 1080)
 		{
-			my_mlx_pixel_put(&img, x, y, randomcolor());
+			my_mlx_pixel_put(&img, x, y, 0x00FF9050);
 			x++;
 		}			
 	}
