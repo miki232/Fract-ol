@@ -6,7 +6,7 @@
 /*   By: mtoia <mtoia@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:21:32 by mtoia             #+#    #+#             */
-/*   Updated: 2022/05/23 14:44:32 by mtoia            ###   ########.fr       */
+/*   Updated: 2022/05/24 17:29:25 by mtoia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "mlx/mlx.h"
 # include <stdlib.h>
 # include <unistd.h>
-
+# define MAXCOUNT 30
 typedef struct s_data
 {
 	void	*img;
@@ -43,8 +43,8 @@ enum {
 	ON_DESTROY = 17
 };
 
-
-
+int fractaly(float left, float top, float xside, float yside);
+int fractalx(float left, float top, float xside, float yside);
 int	main();
 
 #endif
