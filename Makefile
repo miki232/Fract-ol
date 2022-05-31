@@ -6,14 +6,14 @@
 #    By: mtoia <mtoia@student.42roma.it>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 13:32:42 by gifulvi           #+#    #+#              #
-#    Updated: 2022/05/24 16:58:55 by mtoia            ###   ########.fr        #
+#    Updated: 2022/05/31 13:47:59 by mtoia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = int
 
 
-SRC=  init.c prvoa.c
+SRC=  init.c
 HDRS = mlx/
 
 OBJ = $(SRC:.c=.o)
