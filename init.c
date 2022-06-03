@@ -6,7 +6,7 @@
 /*   By: mtoia <mtoia@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:59:02 by mtoia             #+#    #+#             */
-/*   Updated: 2022/05/31 14:53:22 by mtoia            ###   ########.fr       */
+/*   Updated: 2022/06/03 20:09:47 by mtoia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,15 @@ int	main()
 	unsigned int	ImageHeight = 1080;
 	unsigned int ImageWidth = 1019;
 	unsigned int y = 0;
-	double MinRe = -2.0;
-	double MaxRe = 1.0;
-	double MinIm = -1.2;
+	double MinRe = -0.5;////
+	double MaxRe = 0.5;/////////cambiando i valori si riesce a fare una sorta di zoom
+	double MinIm = -0.50;/////
 	double MaxIm = MinIm+(MaxRe-MinRe)*ImageHeight/ImageWidth;
 	double Re_factor = (MaxRe-MinRe)/(ImageWidth-1);
 	double Im_factor = (MaxIm-MinIm)/(ImageHeight-1);
 	unsigned MaxIterations = 30;
-	unsigned int x = 0;
-	unsigned int n = 0;
+	unsigned int x = 200;
+	unsigned int n = 200;
 
 	while(y++ < ImageHeight)
 	{
@@ -86,23 +86,27 @@ int	main()
 					isInside = 0;
 					break;
 				}
-				if (Z_re2 + Z_im2 < 0.05)
-				{
-					my_mlx_pixel_put(&img, x, y, 0x00EFFDFD);
-				}
-				if (Z_re2 + Z_im2 <= 1)
-				{
-					my_mlx_pixel_put(&img, x, y, 0x00D3BEFB);
-				}
-				if (Z_re2 + Z_im2 < 0.2)
-				{
-					my_mlx_pixel_put(&img, x, y, 0x00CC8AFF);
-				}
+				// if (Z_re2 + Z_im2 < 0.05)
+				// {
+				// 	my_mlx_pixel_put(&img, x, y, 0x00EFFDFD);
+				// }
+				// if (Z_re2 + Z_im2 <= 1)
+				// {
+				// 	my_mlx_pixel_put(&img, x, y, 0x00D3BEFB);
+				// }
+				// if (Z_re2 + Z_im2 < 0.2)
+				// {
+				// 	my_mlx_pixel_put(&img, x, y, 0x00CC8AFF);
+				// }
 				Z_im = 2*Z_re*Z_im + c_im;
 				Z_re = Z_re2 - Z_im2 + c_re;
 			}
 			if(isInside)
 			{
+				//printf("%d\n", x);
+				//x *= 0.5;
+				//y *= 0.5;
+				//printf("%d", x);
 				//printf("%d   %d\n", x, y);
 				my_mlx_pixel_put(&img, x, y, 0x00FFFFFF);
 			}
